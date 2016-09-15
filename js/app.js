@@ -8,7 +8,8 @@ window.addEventListener("load", function(){
 
 RFR.init = function() {
 	this.domElementsSetup();
-  	this.addEventListener();
+	this.ageVerification();
+  	this.addEventListener(); 
 };
 
 
@@ -20,15 +21,15 @@ RFR.domElementsSetup = function(){
 };
 
 RFR.ageVerification = function(){
-	var age = alert("Please enter your age?");
+	var age = prompt("Please enter your age?");
 
 	if(age < 13)
 	{
 		this.button.disabled=true;
-		this.message="you are not old enough to play this game";
+		this.message.innerText = "you are not old enough to play this game";
 	}else{
+		this.message.innerText = "The Rock is coming for you, where do you want to hide?";
 		this.playGame();
-
 	}	
 
 };
@@ -38,3 +39,7 @@ RFR.addEventListener = function(){
 		console.log(button);
 	});
 };
+
+RFR.playGame = function(){
+
+}
